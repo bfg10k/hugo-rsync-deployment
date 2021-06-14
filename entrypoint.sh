@@ -9,14 +9,23 @@ fi
 
 cd "${GITHUB_WORKSPACE}/"
 
+echo "Starting Build\n"
+
 hugo version
 hugo $1
 
+echo "Build Ended \n"
+
+
+
 mkdir "${HOME}/.ssh"
-echo "${VPS_DEPLOY_KEY}" > "${HOME}/.ssh/id_rsa_deploy"
-chmod 600 "${HOME}/.ssh/id_rsa_deploy"
+echo "${VPS_DEPLOY_KEY}" > "${HOME}/.ssh/id_rsa"
+chmod 600 "${HOME}/.ssh/id_rsa"
 
 rsync --version
+
+echo "Deploying with Rsync"
+
 sh -c "
 rsync $2 \
   ${GITHUB_WORKSPACE}/public \
