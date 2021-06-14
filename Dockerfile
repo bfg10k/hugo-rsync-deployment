@@ -17,6 +17,8 @@ RUN apk add --no-cache --upgrade --no-progress \
         openssh \
         rsync
 
+RUN apk add --update --no-cache openssh sshpass
+
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
 
