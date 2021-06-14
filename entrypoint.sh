@@ -26,7 +26,7 @@ rsync --version
 
 echo "Deploying with Rsync"
 
-rsync -ratlz --rsh="/usr/bin/sshpass -p ${RSYNC_PASSWORD} ssh -o StrictHostKeyChecking=no -l hugo" ${GITHUB_WORKSPACE}/  ${VPS_DEPLOY_USER}@${VPS_DEPLOY_HOST}:${VPS_DEPLOY_DEST}
+rsync -ratlz --rsh="/usr/bin/sshpass -p ${RSYNC_PASSWORD} ssh -o StrictHostKeyChecking=no -l hugo" ${GITHUB_WORKSPACE}/public/  ${VPS_DEPLOY_USER}@${VPS_DEPLOY_HOST}:${VPS_DEPLOY_DEST}
 
 
 #sh -c "
