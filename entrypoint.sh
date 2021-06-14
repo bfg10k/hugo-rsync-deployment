@@ -24,7 +24,8 @@ chmod 600 "${HOME}/.ssh/id_rsa"
 
 rsync --version
 
-echo "Deploying with Rsync"
+echo "Deploying with ${RSYNC_PASSWORD}Rsync"
+
 
 sh -c "
 rsync $2 \
