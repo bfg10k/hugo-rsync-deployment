@@ -24,13 +24,15 @@ echo "Build Ended \n"
 
 rsync --version
 
-echo "Deploying with ${RSYNC_PASSWORD}Rsync"
+echo "Deploying with Rsync"
+
+rsync -ratlz --rsh="/usr/bin/sshpass -p ${RSYNC_PASSWORD} ssh -o StrictHostKeyChecking=no -l hugo" ${GITHUB_WORKSPACE}/public  ${VPS_DEPLOY_USER}@${VPS_DEPLOY_HOST}:${VPS_DEPLOY_DEST}
 
 
-sh -c "
-rsync $2 \
-  ${GITHUB_WORKSPACE}/public \
-  ${VPS_DEPLOY_USER}@${VPS_DEPLOY_HOST}:${VPS_DEPLOY_DEST}
-"
+#sh -c "
+#rsync $2 \
+#  ${GITHUB_WORKSPACE}/public \
+#  ${VPS_DEPLOY_USER}@${VPS_DEPLOY_HOST}:${VPS_DEPLOY_DEST}
+#"
 
 exit 0
