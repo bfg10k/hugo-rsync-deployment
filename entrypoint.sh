@@ -18,9 +18,9 @@ echo "Build Ended \n"
 
 
 
-mkdir "${HOME}/.ssh"
-echo "${VPS_DEPLOY_KEY}" > "${HOME}/.ssh/id_rsa"
-chmod 600 "${HOME}/.ssh/id_rsa"
+#mkdir "${HOME}/.ssh"
+#echo "${VPS_DEPLOY_KEY}" > "${HOME}/.ssh/id_rsa"
+#chmod 600 "${HOME}/.ssh/id_rsa"
 
 rsync --version
 
