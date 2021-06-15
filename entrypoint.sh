@@ -12,6 +12,9 @@ cd "${GITHUB_WORKSPACE}/"
 echo "Starting Build\n"
 
 hugo version
+
+echo "hugo ${1}"
+
 hugo $1
 
 echo "Build Ended \n"
